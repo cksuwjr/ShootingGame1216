@@ -2,17 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IPickuped : MonoBehaviour
+public interface IPickuped
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void OnPickUp(GameObject picker);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

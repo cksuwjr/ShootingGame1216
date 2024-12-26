@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
 {
     private PlayerController playerController;
     private ScrollManager scrollManager;
+    private EnemySpawnManager enemySpawnManager;
+    private MeteoManager meteoManager;
     private IInputHandle inputHandle;
 
     // 씬이 변경이 되어서 로딩이 끝났을 때
@@ -26,8 +28,9 @@ public class GameManager : Singleton<GameManager>
     {
         playerController = FindAnyObjectByType<PlayerController>();
         scrollManager = FindAnyObjectByType<ScrollManager>();
+        enemySpawnManager = FindAnyObjectByType<EnemySpawnManager>();
         inputHandle = GetComponent<KeyboardInputHandle>();
-
+        meteoManager = FindAnyObjectByType<MeteoManager>();
         //switch (inputType)
         //{
         //    case 1:
@@ -52,7 +55,10 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(1);
         playerController?.StartGame();
         scrollManager?.SetScrollSpeed(4f);
-        Debug.Log("몬스터 등장 시작");
+        yield return new WaitForSeconds(2f);
+        enemySpawnManager?.InitSpawnManager();
+        yield return new WaitForSeconds(10f);
+        meteoManager?.StartSpawnMeteo();
 
     }
 }
