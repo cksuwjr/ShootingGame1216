@@ -11,9 +11,14 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     private PlayerController playerController;
+
+    private ScoreManager scoreManager;
     private ScrollManager scrollManager;
     private EnemySpawnManager enemySpawnManager;
     private MeteoManager meteoManager;
+
+    public ScoreManager GetScoreManager => scoreManager;
+
     private IInputHandle inputHandle;
 
     // 씬이 변경이 되어서 로딩이 끝났을 때
@@ -27,6 +32,8 @@ public class GameManager : Singleton<GameManager>
     private void LoadSceneInit()
     {
         playerController = FindAnyObjectByType<PlayerController>();
+
+        scoreManager = FindAnyObjectByType<ScoreManager>();
         scrollManager = FindAnyObjectByType<ScrollManager>();
         enemySpawnManager = FindAnyObjectByType<EnemySpawnManager>();
         inputHandle = GetComponent<KeyboardInputHandle>();
@@ -50,6 +57,7 @@ public class GameManager : Singleton<GameManager>
     IEnumerator GameStart()
     {
         yield return null;
+        scoreManager?.InitScoreReset();
         Debug.Log("데이터 초기화");
         Debug.Log("BGM 시작");
         yield return new WaitForSeconds(1);

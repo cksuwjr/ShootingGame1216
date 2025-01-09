@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6fa23721b8ef74ead09b3bd4ee0978, type: 3}
+  m_Name: ShootingGame
+  m_EditorClassIdentifier: 
+  MonsterTable:
+  - MonsterID: 10011
+    MonsterName: "\uD30C\uB780\uB1881"
+    MonsterHP: 10
+    MonsterScore: 5
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10021
+    MonsterName: "\uD30C\uB780\uB1882"
+    MonsterHP: 40
+    MonsterScore: 45
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10031
+    MonsterName: "\uD30C\uB780\uB1883"
+    MonsterHP: 90
+    MonsterScore: 30
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10012
+    MonsterName: "\uBE68\uAC04\uB1881"
+    MonsterHP: 15
+    MonsterScore: 6
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10022
+    MonsterName: "\uBE68\uAC04\uB1882"
+    MonsterHP: 45
+    MonsterScore: 16
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10032
+    MonsterName: "\uBE68\uAC04\uB1883"
+    MonsterHP: 95
+    MonsterScore: 36
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10013
+    MonsterName: "\uBCF4\uB77C\uB1881"
+    MonsterHP: 20
+    MonsterScore: 7
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10023
+    MonsterName: "\uBCF4\uB77C\uB1882"
+    MonsterHP: 50
+    MonsterScore: 17
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 10033
+    MonsterName: "\uBCF4\uB77C\uB1883"
+    MonsterHP: 100
+    MonsterScore: 37
+    MonsterProjectile: -1
+    Pattern01: none
+    Pattern02: none
+  - MonsterID: 20001
+    MonsterName: "\uBE68\uAC04\uBCF4\uC2A4\uB188"
+    MonsterHP: 5000
+    MonsterScore: 200
+    MonsterProjectile: 3
+    Pattern01: 1
+    Pattern02: 2
+  - MonsterID: 20002
+    MonsterName: "\uD30C\uB780\uBCF4\uC2A4\uB188"
+    MonsterHP: 7500
+    MonsterScore: 500
+    MonsterProjectile: 4
+    Pattern01: 3
+    Pattern02: 4
+  - MonsterID: 20003
+    MonsterName: "\uBCF4\uB77C\uBCF4\uC2A4\uB188"
+    MonsterHP: 10000
+    MonsterScore: 700
+    MonsterProjectile: 5
+    Pattern01: 5
+    Pattern02: 6

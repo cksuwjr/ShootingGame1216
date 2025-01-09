@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public void CustomUpdate(Vector2 moveDir)
     {
         movement?.Move(moveDir);
+        weapon?.Fire();
+        if(Input.GetKeyDown(KeyCode.Space))
+            weapon?.LunchBomb();
     }
 
     public void StartGame()

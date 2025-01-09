@@ -4,9 +4,11 @@ using UnityEngine;
 
 public interface IWeapon
 {
-    void SetOwner(GameManager newOwner);
+    void SetOwner(GameObject newOwner);
 
     void Fire();
+
+    void LunchBomb();
 
     void SetEnable(bool enable);
 }
