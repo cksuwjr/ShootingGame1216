@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3771727994087334563}
   - component: {fileID: 4640720863642824302}
   - component: {fileID: 4327904978792993656}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Meteorite
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

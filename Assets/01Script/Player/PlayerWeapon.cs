@@ -8,11 +8,12 @@ public class PlayerWeapon : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject projectilePrefab; // 나중에 오브젝트 풀링 구현하면서 수정할 예정
     [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject BombPrefab;
 
     private int numOfProjectile = 5; // 발사 수량
     private float spreadAngle = 5f; // 투사체 발사 각도 간격
     private float fireRate = 0.3f; // 발사 시간 간격
-    private float nextFireRate = 0f;
+    //private float nextFireRate = 0f;
     private float nextFireTime = 0f;
     private bool isFiring = false;
 
@@ -51,7 +52,17 @@ public class PlayerWeapon : MonoBehaviour, IWeapon
         isFiring = enable;
     }
 
-    public void SetOwner(GameManager newOwner)
+    public void LunchBomb()
+    {
+        if(GameManager.Instance.GetScoreManager.BombCount > 0)
+        {
+            GameManager.Instance.GetScoreManager.ChangeBombCount(false);
+
+            obj = Instantiate(BombPrefab, firePoint.position, Quaternion.identity);
+        }
+    }
+
+    public void SetOwner(GameObject newOwner)
     {
         
     }

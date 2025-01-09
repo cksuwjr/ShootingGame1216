@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour, IMovement, IDamaged
     private int curHp = 10;
     private int maxHp = 10;
 
+    public EnemySpawnManager spawnManager;
+
     public bool isDead { get => curHp < 0; }
 
     public delegate void MonsterDiedEvent(Enemy enemyInfo); // 델리게이트 타입 선언
@@ -46,7 +48,21 @@ public class Enemy : MonoBehaviour, IMovement, IDamaged
         if (isInit)
         {
             Move(Vector2.down);
+
+            if(transform.position.y < -7)
+            {
+                gameObject.SetActive(false);
+                spawnManager?.ReturnEnemyToPool(this, 0);
+                //Destroy(gameObject);
+            }
         }
+    }
+
+    public void InitMonsterData(MonsterTable_Entity newData)
+    {
+        maxHp = newData.MonsterHP;
+        curHp = maxHp;
+
     }
 
     public void Move(Vector2 newDirection)
@@ -80,8 +96,10 @@ public class Enemy : MonoBehaviour, IMovement, IDamaged
     private void OnDie()
     {
         OnMonsterDied?.Invoke(this);
-
-        Destroy(gameObject);
+        SetEnable(false);
+        gameObject.SetActive(false);
+        spawnManager?.ReturnEnemyToPool(this, 0);
+        //Destroy(gameObject);
     }
 
 }
